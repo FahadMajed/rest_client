@@ -1,39 +1,62 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# RestClient
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+RestClient is a lightweight Dart library for making HTTP requests to RESTful APIs. It provides a simple and intuitive interface for sending HTTP requests and handling responses.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Supports GET, POST, PUT, PATCH, and DELETE HTTP methods
+- Allows setting headers and query parameters for requests
+- Supports both JSON and form data request bodies
+- Handles response parsing and error handling automatically
+- Provides easy-to-use response objects for accessing response data
+- Can easily switch between Dio and http clients for sending requests
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use RestClient in your Dart project, add the following dependency to your pubspec.yaml file:
+
+```yaml
+dependencies:
+  rest_api:
+    git:
+      url: git://github.com/username/rest_client.git
+```
+
+Replace `username` with your GitHub username.
+
+Then, import the RestClient library in your Dart code:
+
+```dart
+import 'package:rest_client/rest_client.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To send an HTTP request, create a new instance of the RestClient class and use the appropriate method (get, post, put, patch, or delete) to send the request. For example:
 
 ```dart
-const like = 'sample';
+  final client =  HttpRESTClient(
+      baseUrl: 'https://tasty.p.rapidapi.com/recipes',
+      headers: {
+        'X-RapidAPI-Key': '',
+        'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+      },
+    );
+ 
+  final response = await client.call(
+        RESTOption.get,
+        path: '/list?from=$from&size=20',
+        headers: client.headers,
+      );
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For more detailed usage examples, see the examples directory in this repository.
+
+## Contributing
+
+Contributions to this library are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+RestClient is licensed under the MIT License. See the LICENSE file for more information.
