@@ -19,7 +19,7 @@ To use RestClient in your Dart project, add the following dependency to your pub
 dependencies:
   rest_api:
     git:
-      url: git://github.com/username/rest_client.git
+      url: git://github.com/FahadMajed/rest_client.git
 ```
 
 Replace `username` with your GitHub username.
