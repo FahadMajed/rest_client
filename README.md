@@ -22,7 +22,6 @@ dependencies:
       url: git://github.com/FahadMajed/rest_client.git
 ```
 
-Replace `username` with your GitHub username.
 
 Then, import the RestClient library in your Dart code:
 
