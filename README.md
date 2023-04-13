@@ -50,7 +50,10 @@ To send an HTTP request, create a new instance of the RestClient class and use t
 ```
 
 
-For more detailed usage examples, see the examples directory in this repository.
+## Benefits
+
+This package will add aditional layer for error handling, and can be easily injected to services or repositories that needs an HTTP call
+
 
 ## Contributing
 
